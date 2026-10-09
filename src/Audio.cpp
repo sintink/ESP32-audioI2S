@@ -5341,7 +5341,7 @@ std::vector<ps_ptr<char>> Audio::readHeader() {
     m_httpRespHdrBuff.clear();
 
     while (true) { // read the header first and store it in m_httpRespHdrBuff
-        int c = audioFileRead(5000);
+        int c = audioFileRead(30000);
         if (c < 0) {
             AUDIO_LOG_ERROR("timeout");
             hdr_lines.clear();
